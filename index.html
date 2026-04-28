@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>elsanjaya</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <audio id="musik" src="audio/About You ( Edelweis).mp3" autoplay loop></audio>
+
+  <header>
+    <h1>Fahreja A Sanjaya</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <!-- <a href="#kategori">Kategori</a> -->
+      <a href="#about">Pesan</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <section id="home" class="gallery">
+    <div class="image-grid">
+      <img src="image/img016.jpeg" alt="Pendakian 2" />
+      <p class="description">
+        <i>jatuh cinta padamu adalah ketidaksengajaan yang jauh lebih indah dari ribuan hal yang pernah kurencanakan.</i>
+      </p>
+      <img src="image/img001.jpg" alt="Pendakian 2" />
+      <p class="description">
+        <i>bayangkan jika kita jadi sebuah takdir suatu hari, senangmu berapa? aku tentu yang paling banyak.</i>
+      </p>
+      <img src="image/img017.jpeg" alt="Pendakian 4" />
+      <p class="description">
+        <i>bahkan di bumi yang sangat luas ini, bagian yang menyenangkan hanyalah bertemu denganmu.</i>
+      </p>
+      <img src="image/img003.jpeg" alt="Pendakian 5" />
+      <p class="description">
+        <i>sekalinya aku jatuh cinta akan kupastikan, akan jatuh cinta yang paling dalam.</i>
+      </p>
+      <img src="image/img004.jpeg" alt="Pendakian 6" />
+      <p class="description">
+        <i>sama seperti senja, kamu masih dan akan tetap menjadi yang favorit di antara langit lain-snya.</i>
+      </p>
+      <img src="image/img002.jpg" alt="Pendakian 8" />
+      <p class="description">
+        <i>pagi tidak selalu tentang bangun tidur dan sarapan, pagi bisa saja tentang pengakuan bahwa aku masih mencintaimu hari ini.</i>
+      </p>
+      <img src="image/img018.jpeg" alt="Pendakian 10" />
+      <p class="description">
+        <i>kepada yang jadi pujaan hati setinggi langit, pada dirinya, semua terlihat menawan. lebih dan kurangnya, manusia terlalu sukarela mencintainnya.</i>
+      </p>
+      <img src="image/img015.jpeg" alt="Pendakian 13" />
+      <p class="description">
+        <i>aku tidak pernah bosan untuk memujimu, lewat jutaan kata yang jika dicari maknanya... hanya berisi keindahanmu saja.</i>
+      </p>
+      <img src="image/img008.jpg" alt="Pendakian 14" />
+      <p class="description">
+        <i>Your Eyes, Your Voice, Your Smile, I Love Everything <b> About You</b>.</i>
+      </p>
+    </div>
+
+  </section>
+
+  <section id="about">
+    <h2>Disclaimer</h2>
+    <p><i>
+      Lagu <b>About You</b> dari <b>The 1975</b> bisa dimaknai sebagai gambaran cinta yang tenang dan dalam, tanpa harus selalu tentang kehilangan. Filosofinya lebih ke arah bagaimana dua orang tetap saling terhubung secara emosional meskipun tidak selalu mengungkapkan semuanya secara langsung. Ada rasa hangat dari kehadiran yang sederhana, seperti mengenang momen kecil, suara, atau kebiasaan yang melekat tanpa perlu dijelaskan. Lagu ini menunjukkan bahwa cinta tidak selalu harus terlihat besar atau dramatis, tetapi bisa hadir dalam bentuk yang halus, diam, dan konsisten sebuah perasaan yang tumbuh pelan, terasa nyaman, dan tetap hidup di antara dua hati yang saling memahami, bahkan tanpa banyak kata.
+    </i>
+  </section>
+
+  <section id="kontak">
+    <h2>Kontak</h2>
+    <p>Email: elsanjayaa@gmail.com</p>
+    <p>Instagram: @elsanjayaa_</p>
+    <p>TikTok: @elsanjayaa_</p>
+  </section>
+  <p class="akhir"><b>song: About You - The 1975</b></p>
+</body>
+<script>
+  // Blok klik kanan
+  document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  });
+
+  // Blok shortcut Ctrl+S, Ctrl+U, Ctrl+C
+  document.addEventListener('keydown', function (e) {
+    if (
+      (e.ctrlKey && e.key === 's') || // Save
+      (e.ctrlKey && e.key === 'u') || // View Source
+      (e.ctrlKey && e.key === 'c')    // Copy
+    ) {
+      e.preventDefault();
+    }
+  });
+
+  // Blok zoom dengan Ctrl + scroll
+  window.addEventListener('wheel', function (e) {
+    if (e.ctrlKey) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  // Blok Ctrl + [+], Ctrl + [-], Ctrl + 0
+  window.addEventListener('keydown', function (e) {
+    if (
+      e.ctrlKey &&
+      (e.key === '+' || e.key === '-' || e.key === '=' || e.key === '0')
+    ) {
+      e.preventDefault();
+    }
+  });
+  const musik = document.getElementById('musik');
+
+  // Coba langsung play (tidak semua browser izinkan)
+  musik.volume = 0.5;
+  musik.play().catch(() => {
+    // Jika gagal autoplay, tunggu interaksi user dulu
+    const info = document.createElement('div');
+    info.innerText = "Klik di mana saja untuk memutar musik 🎵";
+    info.style.position = "fixed";
+    info.style.top = "10px";
+    info.style.left = "50%";
+    info.style.transform = "translateX(-50%)";
+    info.style.background = "#222";
+    info.style.color = "#0f0";
+    info.style.padding = "10px 20px";
+    info.style.borderRadius = "8px";
+    info.style.zIndex = "9999";
+    document.body.appendChild(info);
+
+    const playOnClick = () => {
+      musik.play();
+      info.remove();
+      document.removeEventListener('click', playOnClick);
+    };
+
+    document.addEventListener('click', playOnClick);
+  });
+</script>
+
+</html>
